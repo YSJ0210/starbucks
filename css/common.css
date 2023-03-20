@@ -1,0 +1,428 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    position: relative;
+    color:#3A3333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    /* body font style */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.inner{
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+.btn{
+    width: 130px;
+    padding: 10px;
+    border: 1px solid #3A3333;
+    border-radius: 4px;
+    color: #3A3333;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: 0.4s;
+}
+
+.btn:hover{
+    background-color: #3A3333;
+    color: #F0F0F0;
+}
+.btn.btn--reverse{
+    background-color: #3A3333;
+    color: #F0F0F0;
+}
+.btn.btn--reverse:hover{
+    background-color: transparent;
+    color : #3A3333;
+}
+.btn.btn--brown{
+    color: #592B18;
+    border-color: #592B18;
+}
+.btn.btn--brown:hover{
+    background-color: #592B18;
+    color : #F0F0F0;
+}
+.btn.btn--gold{
+    color: #D9AA8A;
+    border-color: #D9AA8A;
+}
+.btn.btn--gold:hover{
+    background-color: #D9AA8A;
+    color : #fff;
+}
+.btn.btn--pink{
+    color : #e54360;
+    border-color: #e54360;
+}
+.btn.btn--pink:hover{
+    color: #fff;
+    background-color: #e54360;
+}
+.btn.btn--white{
+    color : #fff;
+    border-color: #fff;
+}
+.btn.btn--white:hover{
+    color: #333;
+    background-color: #fff;
+}
+
+/* scrollMagic 효과 */
+.back-to-position{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right{
+    transform: translateX(-150px);
+}
+.back-to-position.to-left{
+    transform: translateX(150px);
+}
+.back-to-position.to-top{
+    transform: translateY(-200px);
+}
+.back-to-position.to-bottom{
+    transform: translateY(200px);
+}
+.show .back-to-position{
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+
+
+/* HEADER */
+#top_layout{
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+    position: fixed;
+    left : 0;
+    right: 0;
+    top : 0;
+    z-index: 10;
+}
+
+#top_layout > .inner{
+    height: 120px;
+    /* background-color: #355050; */
+    /* color: #F0F0F0; */
+}
+
+#top_layout .logo{
+    /* 맨 위로 띄워주기 */
+    height: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin : auto;
+   /* display: none;*/
+}
+
+#top_layout .inner .sub_menu{
+    display: flex;
+    position: absolute;
+    right: 3px;
+    top: 10px;
+}
+
+
+#top_layout .inner .sub_menu ul.util_menu{
+    /* 자동으로 정렬 */
+    display: flex;
+}
+
+#top_layout .inner .sub_menu ul li::before{
+    /* util_menu 안의 li 사이에 bar 주기*/
+    content: "";
+    width: 0.5px;
+    height: 12px;
+    background-color: #c8c8c8;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#top_layout .inner .sub_menu ul li:first-child::before{
+     /* util_menu 안의 첫번째 li 앞의 bar 숨기기*/
+    display: none;
+}
+
+#top_layout .inner .sub_menu ul li{
+    position: relative;
+}
+
+#top_layout .inner .sub_menu ul li a{
+    /* background-color: #F0F0F0; */
+
+    color: #808080;
+    font-size: 12px;
+
+    display: block;
+
+    padding: 10px 15px; 
+}
+
+#top_layout .inner .sub_menu ul.util_menu li a:hover{
+    text-decoration-line: underline;
+}
+
+#top_layout .inner .sub_menu .search_bar{
+    /* background-color: aquamarine; */
+    position: relative;
+}
+
+#top_layout .inner .sub_menu .search_bar input{
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline : none;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    /* input fonts color */
+    color: #808080;
+    transition : width 1s;    
+}
+
+#top_layout .inner .sub_menu .search_bar input:focus{
+    width: 190px;
+    /* border-color: #007042; */
+}
+
+/* 돋보기 symbol */
+#top_layout .inner .sub_menu .search_bar .material-symbols-outlined{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right : 5px;
+    height: 24px;
+    margin: auto;
+    background-color: #F5F5F5;
+}
+
+#top_layout .inner .sub_menu .search_bar.focused .material-symbols-outlined{
+    opacity: 0;
+}
+
+#top_layout .inner .main_menu{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#top_layout .inner .main_menu .item .item_name{
+    /* padding : 상 좌우 하 */
+    padding: 20px 30px 20px;
+    font-family: 'LINESeedKR-Bd';
+}
+#top_layout .inner .main_menu .item:hover .item_name{
+    background-color: #3A3333;
+    color: #f6f5f0;
+    border-radius: 5px 5px 0 0 ;
+}
+
+#top_layout .inner .main_menu .item .item_contents{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+    
+}
+
+#top_layout .inner .main_menu .item:hover .item_contents{
+    display: block;
+}
+
+#top_layout .inner .main_menu .item .item_contents .contents_menu{
+    height: 250px;
+    background-color: #3A3333;
+    color: #c8c8c8;
+}
+
+
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul{
+    display: flex;
+    padding: 20px 0;
+}
+
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li{
+    width: 220px;
+}
+
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li h4{
+    padding: 3px  0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* 하위 메뉴 ul 태그 */
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li  li{
+    padding: 5px 0;
+    font-size: 13px;
+    color: #F0F0F0;
+    cursor: pointer;
+}
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li  li:hover{
+    text-decoration-line: underline;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+/* contents_text */
+#top_layout .inner .main_menu .item .item_contents .contents_text{
+    height: 100px;
+    background-color: #74634A;
+    /* background-image: url('../images/main_menu_pattern.jpg');
+    opacity: 60%; */
+    padding: 20px 0;
+    
+}
+
+#top_layout .inner .main_menu .item .item_contents .contents_text h4{
+    font-size: 14px;
+    font-weight: 600;
+    color: #EFEFEF;
+}
+#top_layout .inner .main_menu .item .item_contents .contents_text p{
+    font-size: 12px;
+    margin: 4px 0;
+    color : #EAEDF2;
+}
+
+/* BADGES */
+#top_layout .badges{
+    position: absolute;
+    right: 15px;
+    top: 135px;
+}
+
+/* #top_layout .badges .badge{
+
+} */
+#top_layout .badge img{
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* FOOTER  */
+#foot_layout{
+    background-color: #272727;
+    border-top: 1px solid #333;
+}
+#foot_layout .inner{
+    /* display: flex; */
+    padding: 40px 0 60px 0;
+}
+#foot_layout .inner .menu{
+    color: #F0F0F0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+#foot_layout .inner .menu li{
+
+}
+#foot_layout .inner li a{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px;
+}
+#foot_layout .inner li:first-child a{
+    color: #00B050;
+}
+#foot_layout .inner li::before{
+    content: "";
+    width: 2px;
+    height: 2px;
+    display: block;
+    border-radius: 50px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#foot_layout .inner li:first-child::before{
+    display: none;
+}
+#foot_layout .inner li a:hover{
+    text-decoration-line: underline;
+}
+#foot_layout .inner .btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#foot_layout .inner .btn-group .btn{
+    font-size: 13px;
+    margin-right: 20px;
+}
+#foot_layout .inner .btn-group .btn:last-child{
+    margin-right: 0;
+}
+#foot_layout .inner .btn-group .btn.btn.btn--white{}
+#foot_layout .inner .info{
+    text-align: center;
+    
+}
+#foot_layout .inner .info span{
+    font-size: 12px;
+    color: #ccc;
+    margin-right: 20px;
+    font-weight: 600;
+}
+#foot_layout .inner .info span:last-child{
+    margin-right: 0;
+}
+#foot_layout .inner .copyright{
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+#foot_layout .inner .logo{
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto; */
+    display: block;
+    margin: 30px auto 0;
+}
